@@ -6,7 +6,8 @@ const ContentProduct = (props) => {
           <img
             className="product-picture"
             src={props.offer.product_image.url}
-          ></img>
+            alt="le produit"
+          />
         </div>
         <div className="product-infos">
           <span className="product-price">{props.offer.product_price}€</span>

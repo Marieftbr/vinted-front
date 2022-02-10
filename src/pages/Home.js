@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../components/Header";
 import Bandeau from "../components/Bandeau";
 import Content from "../components/Content";
 
@@ -25,7 +23,6 @@ const Home = () => {
     <span>En cours de chargement... </span>
   ) : (
     <div>
-      <Header />
       <Bandeau />
       <Content offers={offers} />
     </div>

@@ -204,3 +204,42 @@
   font-weight: 700;
   padding-left: 4px;
 }
+
+/* CSS SIGNUP FORM */
+input {
+  border: none;
+  border-bottom: 1px solid #999;
+  padding: 5px;
+  margin-bottom: 20px;
+  width: 30%;
+}
+.checkbox-form {
+  transform: scale(2);
+  margin-right: 20px;
+}
+.signup-form {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.little-text {
+  width: 30%;
+  margin: auto;
+  text-align: left;
+  color: #999;
+  font-size: 12px;
+}
+.btn-foncé-signup-form {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #09b1ba;
+  color: #fff;
+  width: 30%;
+}

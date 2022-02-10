@@ -6,6 +6,7 @@ const ProductCard = (props) => {
           <img
             className="card-profile-user"
             src={props.product.owner.account.avatar.url}
+            alt="le profil"
           ></img>
           <span className="card-user-name">
             {props.product.owner.account.username}

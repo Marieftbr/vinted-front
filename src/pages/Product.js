@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../components/Header";
 import ContentProduct from "../components/ContentProduct";
 import { useParams } from "react-router-dom";
 
@@ -19,12 +18,12 @@ const Product = () => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, []);
   return isLoading ? (
     <span>En cours de chargement... </span>
   ) : (
     <div>
-      <Header />
       <ContentProduct offer={offer} />
     </div>
   );
