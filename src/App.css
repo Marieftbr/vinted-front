@@ -17,16 +17,17 @@
   padding: 10px 0;
 }
 .logo-wrapper {
-  width: 70%;
+  width: 33%;
 }
 .logo {
-  width: 10%;
+  width: 20%;
 }
 
 .btn-wrapper {
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 33%;
+  justify-content: space-evenly;
 }
 .btn-clair {
   padding: 10px;
@@ -42,7 +43,38 @@
   background-color: #09b1ba;
   color: #fff;
 }
-
+.search-container {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.input-search {
+  width: 100%;
+  padding-left: 40px;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+  height: 37px;
+  border: none;
+  outline: none;
+  font-family: "Maison Neue";
+  font-size: 16px;
+}
+.input-range-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.input-range {
+  transform: scale(1);
+  cursor: inherit;
+  height: 36px;
+  display: flex;
+  width: 50%;
+  color: #09b1ba;
+}
 /* CSS BANDEAU */
 .bandeau-img {
   background-image: url(./img/bandeau.jpg);
@@ -242,4 +274,10 @@ input {
   background-color: #09b1ba;
   color: #fff;
   width: 30%;
+}
+
+/* CSS LOGIN FORM */
+.text-little-link {
+  color: #2cb1ba;
+  font-size: 12px;
 }
