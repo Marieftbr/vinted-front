@@ -281,3 +281,46 @@ input {
   color: #2cb1ba;
   font-size: 12px;
 }
+
+/* CSS PUBLISH FORM */
+.page-container {
+  margin: auto;
+}
+.title {
+  font-size: 24px;
+  padding-top: 40px;
+}
+
+.dot-line {
+  border: #09b1ba 1px dashed;
+  padding: 15px;
+  margin: auto;
+}
+.btn-picture-publish-form {
+  margin: auto;
+}
+
+.block-form {
+  width: 100%;
+  background-color: #fff;
+  border: #999 solid 1px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.form-element-block {
+  display: flex;
+  justify-content: space-between;
+}
+.form-element-block-border {
+  border-bottom: 1px solid rgb(189, 189, 189);
+  margin-bottom: 20px;
+}
+.form-checkbox-exchange {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-end;
+}
+.form-publish-btn {
+  margin-left: 960px;
+}

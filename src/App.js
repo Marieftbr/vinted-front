@@ -5,6 +5,7 @@ import Product from "./pages/Product";
 import SignUp from "./pages/SignUp";
 import Header from "./components/Header";
 import Login from "./pages/Login";
+import Publish from "./pages/Publish";
 import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -45,6 +46,7 @@ function App() {
           <Route path="/product/:id" element={<Product />} />
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/login" element={<Login setToken={setToken} />}></Route>
+          <Route path="/publish" element={<Publish token={token} />}></Route>
         </Routes>
       </Router>
     </div>

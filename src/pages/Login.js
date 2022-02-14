@@ -17,7 +17,7 @@ const Login = (props) => {
         password,
       }
     );
-    //Cookies.set("token", response.data.token);
+    Cookies.set("token", response.data.token);
     props.setToken(response.data.token);
   };
 

@@ -1,3 +1,5 @@
+import userimgbydefault from "../img/userbydefault.png";
+
 const ProductCard = (props) => {
   return (
     <div className="product-card">
@@ -5,7 +7,11 @@ const ProductCard = (props) => {
         <div className="card-user-block">
           <img
             className="card-profile-user"
-            src={props.product.owner.account.avatar.url}
+            src={
+              props.product.owner.account.avatar?.url
+                ? props.product.owner.account.avatar.url
+                : userimgbydefault
+            }
             alt="le profil"
           ></img>
           <span className="card-user-name">
