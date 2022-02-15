@@ -5,11 +5,9 @@ const Bandeau = () => {
     <div className="bandeau">
       <div className="bandeau-img">
         <img className="dechirure" src={dechirure} alt="dechirure" />
-        <div className="toto">
-          <div className="block-over">
-            Prêts à faire du tri dans vos placards?
-            <button className="btn-foncé left">Commencer à vendre</button>
-          </div>
+        <div className="block-over">
+          <h1>Prêts à faire du tri dans vos placards?</h1>
+          <button className="btn-foncé left">Commencer à vendre</button>
         </div>
       </div>
     </div>

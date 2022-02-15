@@ -10,7 +10,7 @@ const Payments = (props) => {
 
   return (
     <Elements stripe={stripePromise}>
-      <CheckoutForm title={title} price={price} />
+      <CheckoutForm title={title} price={price} token={props.token} />
     </Elements>
   );
 };

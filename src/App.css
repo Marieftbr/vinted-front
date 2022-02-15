@@ -1,6 +1,14 @@
+@font-face {
+  font-family: "Maison Neue";
+  src: url("/public/Font.07eee1dd.woff2");
+}
+
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+}
+
+html {
+  font-family: "Maison Neue", sans-serif;
 }
 
 .container {
@@ -93,23 +101,29 @@
   pointer-events: none;
 }
 .block-over {
-  height: 220px;
   width: 360px;
   background-color: #fff;
-  padding: 25px;
+  padding: 70px 25px;
   border-radius: 3px;
   font-size: 34px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   position: absolute;
   top: 75px;
+  left: 15%;
   text-align: left;
+  line-height: 1.2;
+  font-weight: lighter;
+  border: 1px solid #ccc;
 }
-.toto {
-  width: 1280px;
-  margin: auto;
+
+.block-over h1 {
+  margin-bottom: 30px;
 }
+
+.block-over button {
+  font-size: 16px;
+  font-weight: 200;
+}
+
 .left {
   text-align: left;
 }
@@ -161,6 +175,7 @@
 }
 .card-product-price {
   font-size: 14px;
+  color: #111;
 }
 .card-product-size,
 .card-product-marque {
@@ -328,19 +343,22 @@ input {
 
 .form-payment {
   background-color: #fff;
+  width: 660px;
+  margin: auto;
 }
 .first-block {
   width: 660px;
   margin: auto;
-  padding: 15px;
+  padding: 20px;
 }
 .border-firs-el {
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #eee;
 }
 .block-element {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 5px 0;
 }
 .grey {
   font-size: 16px;
@@ -354,6 +372,7 @@ input {
   font-size: 14px;
   line-height: 18px;
   color: #999;
+  margin-bottom: 20px;
 }
 .btn-pay {
   background-color: #00bb6a;
@@ -362,4 +381,14 @@ input {
   border: none;
   border-radius: 2px;
   padding: 10px;
+}
+
+.payment-page {
+  background-color: #eee;
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+a {
+  text-decoration: none;
 }

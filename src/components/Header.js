@@ -1,5 +1,5 @@
 import logo from "../img/logo.3dcf8b02.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { Range, getTrackBackground } from "react-range";
@@ -7,6 +7,7 @@ import { Range, getTrackBackground } from "react-range";
 const Header = (props) => {
   const MIN = 0;
   const MAX = 50;
+  const location = useLocation();
 
   const [search, setSearch] = useState("");
   const [values, setValues] = useState([MIN, MAX]);
@@ -37,83 +38,88 @@ const Header = (props) => {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
-        <div className="input-range-wrapper">
-          <label>Prix entre :</label>
-          <Range
-            step={5}
-            min={MIN}
-            max={MAX}
-            values={values}
-            rtl={false}
-            onChange={setValues}
-            renderTrack={({ props, children }) => (
-              <div
-                onMouseDown={props.onMouseDown}
-                onTouchStart={props.onTouchStart}
-                style={{
-                  ...props.style,
-                  height: "6px",
-                  width: "100%",
-                  display: "flex",
-                  backgroundColor: "#ccc",
-                }}
-              >
+        {location.pathname === "/" ? (
+          <div className="input-range-wrapper">
+            <label>Prix entre :</label>
+            <Range
+              step={5}
+              min={MIN}
+              max={MAX}
+              values={values}
+              rtl={false}
+              onChange={setValues}
+              renderTrack={({ props, children }) => (
                 <div
-                  ref={props.ref}
+                  onMouseDown={props.onMouseDown}
+                  onTouchStart={props.onTouchStart}
                   style={{
-                    height: "5px",
+                    ...props.style,
+                    height: "6px",
                     width: "100%",
-                    borderRadius: "4px",
-                    background: getTrackBackground({
-                      values,
-                      colors: ["#ccc", "#09b1ba", "#ccc"],
-                      min: MIN,
-                      max: MAX,
-                      rtl: false,
-                    }),
-                    alignSelf: "center",
+                    display: "flex",
+                    backgroundColor: "#ccc",
                   }}
                 >
-                  {children}
+                  <div
+                    ref={props.ref}
+                    style={{
+                      height: "5px",
+                      width: "100%",
+                      borderRadius: "4px",
+                      background: getTrackBackground({
+                        values,
+                        colors: ["#ccc", "#09b1ba", "#ccc"],
+                        min: MIN,
+                        max: MAX,
+                        rtl: false,
+                      }),
+                      alignSelf: "center",
+                    }}
+                  >
+                    {children}
+                  </div>
                 </div>
-              </div>
-            )}
-            renderThumb={({ index, props }) => (
-              <div
-                {...props}
-                style={{
-                  ...props.style,
-                  height: "15px",
-                  width: "15px",
-                  borderRadius: "50px",
-                  backgroundColor: "#09b1ba",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
+              )}
+              renderThumb={({ index, props }) => (
                 <div
+                  {...props}
                   style={{
-                    position: "absolute",
-                    top: "-28px",
-                    color: "#fff",
-                    fontWeight: "100",
-                    fontSize: "14px",
-                    fontFamily: "Arial,Helvetica Neue,Helvetica,sans-serif",
-                    padding: "4px",
-                    borderRadius: "4px",
+                    ...props.style,
+                    height: "15px",
+                    width: "15px",
+                    borderRadius: "50px",
                     backgroundColor: "#09b1ba",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
-                  {Math.trunc(values[index].toFixed(1))}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "-28px",
+                      color: "#fff",
+                      fontWeight: "100",
+                      fontSize: "14px",
+                      fontFamily: "Arial,Helvetica Neue,Helvetica,sans-serif",
+                      padding: "4px",
+                      borderRadius: "4px",
+                      backgroundColor: "#09b1ba",
+                    }}
+                  >
+                    {Math.trunc(values[index].toFixed(1))}
+                  </div>
                 </div>
-              </div>
-            )}
-          />
-        </div>
+              )}
+            />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
+
       {props.token ? (
-        <div>
+        <div className="btn-wrapper">
           <button className="btn-clair" onClick={props.disconnect}>
             Se déconnecter
           </button>

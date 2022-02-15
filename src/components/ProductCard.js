@@ -25,7 +25,7 @@ const ProductCard = (props) => {
         />
         <div className="card-bottom">
           <span className="card-product-price">
-            {props.product.product_price}
+            {props.product.product_price}€
           </span>
 
           {props.product.product_details.map((elem, index) => {
