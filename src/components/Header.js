@@ -8,6 +8,7 @@ const Header = (props) => {
   const MIN = 0;
   const MAX = 50;
   const location = useLocation();
+  const { fetchData } = props;
 
   const [search, setSearch] = useState("");
   const [values, setValues] = useState([MIN, MAX]);
@@ -20,8 +21,8 @@ const Header = (props) => {
     if (search) {
       query.title = search;
     }
-    props.fetchData(query);
-  }, [search, values]);
+    fetchData(query);
+  }, [search, values, fetchData]);
 
   return (
     <div className="navbar container">

@@ -27,7 +27,7 @@ const Publish = (props) => {
       formData.append("size", parseInt(productSize));
       formData.append("color", productColor);
 
-      const response = await axios.post(
+      await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
         formData,
         {

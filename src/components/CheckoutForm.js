@@ -16,13 +16,10 @@ const CheckoutForm = (props) => {
       const stripeResponse = await stripe.createToken(cardElements, {
         name: props.token,
       });
-      const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/payment",
-        {
-          token: stripeResponse.token.id,
-          amount: amount,
-        }
-      );
+      await axios.post("https://lereacteur-vinted-api.herokuapp.com/payment", {
+        token: stripeResponse.token.id,
+        amount: amount,
+      });
       setHasPayed(true);
     } catch (error) {
       console.error(error.message);
