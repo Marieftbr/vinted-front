@@ -1,7 +1,7 @@
 import logo from "../img/logo.3dcf8b02.png";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Cookies from "js-cookie";
+
 import { Range, getTrackBackground } from "react-range";
 
 const Header = (props) => {
@@ -25,7 +25,9 @@ const Header = (props) => {
   return (
     <div className="navbar container">
       <div className="logo-wrapper">
-        <img className="logo" src={logo} alt="logo de vinted" />
+        <a href="/">
+          <img className="logo" src={logo} alt="logo de vinted" />
+        </a>
       </div>
       <div className="search-container">
         <input
@@ -111,9 +113,14 @@ const Header = (props) => {
         </div>
       </div>
       {props.token ? (
-        <button className="btn-clair" onClick={props.disconnect}>
-          Se déconnecter
-        </button>
+        <div>
+          <button className="btn-clair" onClick={props.disconnect}>
+            Se déconnecter
+          </button>
+          <Link to="/publish">
+            <button className="btn-foncé">Vends tes articles</button>
+          </Link>
+        </div>
       ) : (
         <div className="btn-wrapper">
           <Link to="/signup">
@@ -122,7 +129,9 @@ const Header = (props) => {
           <Link to="/login">
             <button className="btn-clair">Se connecter</button>
           </Link>
-          <button className="btn-foncé">Vends tes articles</button>
+          <Link to="/publish">
+            <button className="btn-foncé">Vends tes articles</button>
+          </Link>
         </div>
       )}
     </div>

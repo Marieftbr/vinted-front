@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 const Publish = (props) => {
   const [productImg, setProductImg] = useState();
@@ -43,7 +44,7 @@ const Publish = (props) => {
     }
   };
 
-  return (
+  return props.token ? (
     <div className="container page-container">
       <span className="title">Vends ton article</span>
       <form onSubmit={handleSubmit}>
@@ -163,6 +164,8 @@ const Publish = (props) => {
         </button>
       </form>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 export default Publish;

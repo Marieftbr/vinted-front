@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const ContentProduct = (props) => {
+  const navigate = useNavigate();
   return (
     <div className="product-page">
       <div className="content-product-wrapper">
@@ -41,7 +44,19 @@ const ContentProduct = (props) => {
               <span>{props.offer.owner.account.username}</span>
             </div>
           </div>
-          <button className="btn-foncé">Acheter</button>
+          <button
+            className="btn-foncé"
+            onClick={() =>
+              navigate("/payment", {
+                state: {
+                  title: props.offer.product_name,
+                  price: props.offer.product_price,
+                },
+              })
+            }
+          >
+            Acheter
+          </button>
         </div>
       </div>
     </div>

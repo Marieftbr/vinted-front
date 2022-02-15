@@ -324,3 +324,42 @@ input {
 .form-publish-btn {
   margin-left: 960px;
 }
+/* CSS FORMPAYMENT */
+
+.form-payment {
+  background-color: #fff;
+}
+.first-block {
+  width: 660px;
+  margin: auto;
+  padding: 15px;
+}
+.border-firs-el {
+  border-bottom: 1px solid #999;
+}
+.block-element {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.grey {
+  font-size: 16px;
+  line-height: 22px;
+  color: #666;
+}
+.bold {
+  font-weight: 700;
+}
+.title-form-payment {
+  font-size: 14px;
+  line-height: 18px;
+  color: #999;
+}
+.btn-pay {
+  background-color: #00bb6a;
+  color: #fff;
+  width: 100%;
+  border: none;
+  border-radius: 2px;
+  padding: 10px;
+}

@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import Bandeau from "../components/Bandeau";
 import Content from "../components/Content";
 
